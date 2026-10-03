@@ -1,0 +1,48 @@
+<!DOCTYPE html><html lang="id"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Teknik Kontrol Mekatronika</title>
+<link href="https://fonts.googleapis.com/css2?family=Pixelify+Sans:wght@400;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css"></head><body>
+<div id="game">
+<section class="screen active" id="s-menu" data-bg="menu">
+ <h1 id="title"></h1>
+ <nav id="menu-btns">
+  <button class="pbtn mbtn" data-go="materi" style="--c:#2c4aa8">📖 MATERI</button>
+  <button class="pbtn mbtn" data-go="simulasi" style="--c:#b8458c">⚙ SIMULASI</button>
+  <button class="pbtn mbtn" data-go="latihan" style="--c:#1f8a7a">📝 LATIHAN</button>
+ </nav>
+ <div id="cast"><img data-c="teacher" alt=""><img data-c="eve" alt=""><img data-c="alice" alt=""></div>
+ <p id="tagline" class="panel"></p>
+</section>
+<section class="screen" id="s-materi" data-bg="materi" data-mode="materi">
+ <div class="tag" style="--c:#2c4aa8">📖 MATERI</div>
+ <img class="spr" data-c="teacher" alt="">
+ <div class="board"><div id="board"></div><div id="mnav"></div></div>
+ <div class="dlg panel"><b class="nm"></b><p class="tx"></p><i class="ar">▼</i></div>
+</section>
+<section class="screen" id="s-simulasi" data-bg="simulasi" data-mode="sim">
+ <div class="tag" style="--c:#b8458c">⚙ SIMULASI</div>
+ <img class="spr" data-c="alice" alt="">
+ <div id="simpanel" class="panel">
+  <div id="sim-board"></div>
+  <div id="sim-ctl"><b>Input</b><button class="pbtn" data-s="a" style="--c:#2c4aa8"></button><button class="pbtn" data-s="b" style="--c:#2c4aa8"></button><button class="pbtn" id="run" style="--c:#2b6fd1">▶ Run</button><div id="sim-tt"></div></div>
+ </div>
+ <div class="dlg panel"><b class="nm"></b><p class="tx"></p><i class="ar">▼</i></div>
+</section>
+<section class="screen" id="s-latihan" data-bg="latihan" data-mode="quiz">
+ <div class="tag" style="--c:#1f8a7a">📝 LATIHAN</div>
+ <img class="spr" data-c="eve" alt="">
+ <div id="qbox" class="panel"></div>
+ <div class="dlg panel"><b class="nm"></b><p class="tx"></p><i class="ar">▼</i></div>
+</section>
+<button id="back" class="pbtn" data-go="menu" style="--c:#3a4468;display:none">◀ Menu</button>
+<div id="hud"><span>Knowledge</span><div id="kbar"><i></i></div><b id="kval"></b><button id="gear" class="pbtn" style="--c:#3a4468">⚙</button></div>
+<div id="settings" class="panel" hidden><b>Pengaturan</b>
+ <label>Musik <input type="range" id="v-bgm" min="0" max="1" step=".05"></label>
+ <label>Efek <input type="range" id="v-sfx" min="0" max="1" step=".05"></label>
+ <label><input type="checkbox" id="v-mute"> Bisu</label>
+ <button class="pbtn" id="reset" style="--c:#a33">Reset Knowledge</button></div>
+<div id="toast"></div><div id="trans"></div>
+</div>
+<script src="data/characters.js"></script><script src="data/dialogues.js"></script><script src="data/materials.js"></script><script src="data/questions.js"></script>
+<script src="js/audio.js"></script><script src="js/knowledge.js"></script><script src="js/dialogue.js"></script><script src="js/simulation.js"></script><script src="js/material.js"></script><script src="js/quiz.js"></script><script src="js/main.js"></script>
+</body></html>
